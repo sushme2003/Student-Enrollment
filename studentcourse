@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="course" onclick="show()"> 
+        <option hidden> select option</option>
+        <option value="Data Science"> Data Science</option>
+        <option value="Artificial Intelligence"> Artificial Intelligence</option>
+        <option value="Machine Learning"> Machine Learning</option>
+        
+    </select>
+    <div id="display"></div>
+    
+</body>
+<script>
+    var course=document.getElementById("course");
+    var list={"Artificial Intelligence":{name:"Artificial Intelligence",code:"CS1307",count:"127"},"Machine Learning":{name:"Machine Learning",code:"CS1278",count:"156"},"Data Science":{name:"Data Science",code:"CS1509",count:"410"}};
+    var div=document.getElementById("display");
+    course.addEventListener("change",function(){
+        var cs=course.value;
+        var sel=list[cs];
+        div.innerHTML=`Course name:${sel.name}<br>
+            Course code:${sel.code}<br>
+            students enrolled:${sel.count}`
+    });
+    
+
+
+</script>
+</html>
